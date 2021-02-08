@@ -44,6 +44,12 @@
     font-family:"Open Sans",sans-serif;
 }
 
+.popupForm .content .formInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .popupForm .close-btn {
     cursor:pointer;
     position:absolute;
@@ -53,7 +59,7 @@
     height:30px;
     background:#222;
     color:#fff;
-    font-size:25px;
+    font-size:10px;
     font-weight:600;
     line-height:30px;
     text-align:center;

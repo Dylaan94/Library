@@ -3,23 +3,28 @@ let libDisplay = document.getElementById("libDisplay");
 let formButton = document.getElementById("formButton");
 let closeButton = document.getElementById("close-btn");
 
+
+// variables for constructor
 let bookTitle = document.getElementById("bookTitle");
+let bookAuthor = document.getElementById("bookAuthor");
+let pageNum = document.getElementById("pagesNumber")
+
+
 let submitButton = document.getElementById("submit");
 
 let newbook;
 let title;
 
-let displayArray = []
-
+// constructor function
 function Book() {
     this.title = bookTitle.value;
-    //this.read = 
-    // constructor function
+    this.author = bookAuthor.value;
+    this.pageNum = pageNum.value
 }
 
 function addBookToLibrary () {
     console.log("addBookToLibrary Launched")
-    newBook = new Book(bookTitle.value);
+    newBook = new Book();
     myLibrary.push(newBook);
     createBook();
 }
@@ -31,18 +36,20 @@ function createBook () {
                 newDiv = document.createElement("div");
                 newDiv.className = "book";
                 newDiv.id = "book" + (i+1)
-                newDiv.innerHTML = myLibrary[i].title;                
+                newDiv.innerHTML =  "<h1>" + myLibrary[i].title + "</h1>" + 
+                                    "<h2>" + myLibrary[i].author + "</h2>" +
+                                    "<h3>" + myLibrary[i].pageNum + "</h3>";
     }
     libDisplay.appendChild(newDiv); 
 
     console.log(libDisplay);
-
-
 }
 
-
-
-
+function styleBooks () {
+    for (let i = 0; i < myLibrary.length; i++){
+        
+    }
+}
 
 // form toggle controls
 

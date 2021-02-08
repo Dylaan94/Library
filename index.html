@@ -22,17 +22,22 @@
     <div class = "popupForm" id = "popupForm">
         <div class = "overlay">
             <div class = "content">
-                <div class = "close-btn" id = "close-btn">click to close</div>
+                <div class = "close-btn" id = "close-btn">close</div>
                 <h1>Fill in your details</h1>
-                <label for = "bookTitle"> Title</label>
-                <input type = "text" id = "bookTitle" name = "bookTitle">
-                <button class = "submit" id = "submit"> submit </button>
-                <p>read</p>
+                <div class = "formInput">
+                    <label for = "bookTitle"> Title </label>
+                    <input type = "text" id = "bookTitle" name = "bookTitle">
+                    <label for = "bookAuthor"> Author </label>
+                    <input type = "text" id = "bookAuthor" name = "bookAuthor">
+                    <label for = "pagesNumber"> number of pages </label>
+                    <input type = "text" id = "pagesNumber" name = "pagesNumber">
+                    <button class = "submit" id = "submit"> submit </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <button class = "formButton" id = "formButton"> click me! </button>
+    <button class = "formButton" id = "formButton"> click to add a book :) </button>
 
 
 
