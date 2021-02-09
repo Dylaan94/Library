@@ -1,17 +1,17 @@
 let myLibrary = []
 let libDisplay = document.getElementById("libDisplay");
+
+// buttons 
 let formButton = document.getElementById("formButton");
 let closeButton = document.getElementById("close-btn");
-
+let deleteButton = []
+let submitButton = document.getElementById("submit");
 
 // variables for constructor
 let bookTitle = document.getElementById("bookTitle");
 let bookAuthor = document.getElementById("bookAuthor");
 let pageNum = document.getElementById("pagesNumber")
 let read = document.getElementById("read");
-
-
-let submitButton = document.getElementById("submit");
 
 let newbook;
 let title;
@@ -45,20 +45,32 @@ function createBook () {
         // creates divs based off books in array
                 newDiv = document.createElement("div");
                 newDiv.className = "book";
-                newDiv.id = "book" + (i+1)
+                newDiv.id = "book" + (i)
                 newDiv.innerHTML =  "<h1>" + myLibrary[i].title + "</h1>" + 
                                     "<h2>" + myLibrary[i].author + "</h2>" +
                                     "<h3>" + myLibrary[i].pageNum + "</h3>" +
                                     "<h4>" + myLibrary[i].read + "</h3>" ;
-                button.class = "delete-btn";
-                button.id = "delete-btn" + (i+1);
-                newDiv.appendChild(button)
+                button.className = "delete-btn";
+                button.id = i; // set id as digit to act as index for splicing
+                newDiv.appendChild(button)        
     }
 
+    deleteButton.push(button)
     libDisplay.appendChild(newDiv); 
+    console.log(libDisplay);  
 
-    console.log(libDisplay);
+    deleteButton.forEach(deleteButton => {
+        deleteButton.onclick = function () {
+            this.parentNode.remove()
+            myLibrary.splice(this.id, 1);
+        }
+    })
+
 }
+
+
+
+
 
 
 function addDeleteButton () {
@@ -67,6 +79,8 @@ function addDeleteButton () {
         myLibrary[i].appendChild(button);
     }
 }
+
+
 
 // form toggle controls
 
@@ -85,6 +99,12 @@ closeButton.addEventListener("click", function () {
 submitButton.addEventListener("click", function() {
     addBookToLibrary();
 })
+
+
+
+
+
+
 
 
 
