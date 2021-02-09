@@ -8,6 +8,7 @@ let closeButton = document.getElementById("close-btn");
 let bookTitle = document.getElementById("bookTitle");
 let bookAuthor = document.getElementById("bookAuthor");
 let pageNum = document.getElementById("pagesNumber")
+let read = document.getElementById("read");
 
 
 let submitButton = document.getElementById("submit");
@@ -20,6 +21,12 @@ function Book() {
     this.title = bookTitle.value;
     this.author = bookAuthor.value;
     this.pageNum = pageNum.value
+    // change innerHTML to read status
+    if (read.checked === true) {
+        this.read = "read";
+    } else {
+        this.read = "unread";
+    }
 }
 
 function addBookToLibrary () {
@@ -31,6 +38,9 @@ function addBookToLibrary () {
 
 function createBook () {
     let newDiv;
+    let button = document.createElement("button");
+    button.innerHTML = "delete"
+
     for (let i = 0; i < myLibrary.length; i++){
         // creates divs based off books in array
                 newDiv = document.createElement("div");
@@ -38,16 +48,23 @@ function createBook () {
                 newDiv.id = "book" + (i+1)
                 newDiv.innerHTML =  "<h1>" + myLibrary[i].title + "</h1>" + 
                                     "<h2>" + myLibrary[i].author + "</h2>" +
-                                    "<h3>" + myLibrary[i].pageNum + "</h3>";
+                                    "<h3>" + myLibrary[i].pageNum + "</h3>" +
+                                    "<h4>" + myLibrary[i].read + "</h3>" ;
+                button.class = "delete-btn";
+                button.id = "delete-btn" + (i+1);
+                newDiv.appendChild(button)
     }
+
     libDisplay.appendChild(newDiv); 
 
     console.log(libDisplay);
 }
 
-function styleBooks () {
-    for (let i = 0; i < myLibrary.length; i++){
-        
+
+function addDeleteButton () {
+
+    for (let i = 0; i <myLibrary.length; i++) {
+        myLibrary[i].appendChild(button);
     }
 }
 
