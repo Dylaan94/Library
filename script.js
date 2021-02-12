@@ -65,17 +65,17 @@ function createBook () {
         newDiv.id = "book" + (i)
         newDiv.innerHTML =  "<h1>" + myLibrary[i].title + "</h1>" + 
                             "<h2>" + myLibrary[i].author + "</h2>" +
-                            "<h3>" + myLibrary[i].pageNum + "</h3>" +
-                            "<h4>" + myLibrary[i].read + "</h3>" ;
+                            "<h3>" + myLibrary[i].pageNum + " pages" + "</h3>" ;
         button.className = "delete-btn";
         button.id = i; // set id as digit to act as index for splicing
         input.id = i; // same as above for read button
-        newDiv.appendChild(button)
-        newDiv.appendChild(label)    
+        newDiv.appendChild(label)   
+        newDiv.appendChild(button) 
     };
 
-    deleteButton.push(button) // push to array to iterate
     readSwitch.push(input); // push to array to iterate
+    deleteButton.push(button) // push to array to iterate
+ 
     libDisplay.appendChild(newDiv); 
     console.log(libDisplay);  
 
@@ -87,7 +87,6 @@ function deleteButtonFunc() {
         deleteButton.onclick = function () {
             this.parentNode.remove()
             myLibrary[this.id] = ""
-            // myLibrary.splice(this.id, 1); // removes deleted div from the array (only works on first try)
         }
     })
 }
@@ -120,19 +119,12 @@ function readSwitchFunc () {
 }
 
 function checkReadBox () {
-
     console.log("checkreadbox");
-
-    // need to add index to objects to iterate through
-
     for (let i = 0; i < myLibrary.length; i++) {
         if (myLibrary[i].read === "read") {
             readSwitch[i].checked = true;
         }
     }
-
-    // check mylibrary 
-
 }
 
 // form toggle controls
@@ -160,8 +152,5 @@ submitButton.addEventListener("click", function() {
     toggleForm();
 })
 
-
-
-// need to add function that automaticaly sets the toggle button 
-// depending on whether or not its been read
+// https://coolors.co/ede0d4-e6ccb2-ddb892-b08968-7f5539-9c6644
 
