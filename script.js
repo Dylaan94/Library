@@ -14,18 +14,20 @@ let bookTitle = document.getElementById("bookTitle");
 let bookAuthor = document.getElementById("bookAuthor");
 let pageNum = document.getElementById("pagesNumber")
 let read = document.getElementById("read");
+let index = 0;
 
 // constructor function
 function Book() {
     this.title = bookTitle.value;
     this.author = bookAuthor.value;
     this.pageNum = pageNum.value
+    this.index = index++;
     // change innerHTML to read status
     if (read.checked === true) {
         this.read = "read";
     } else {
         this.read = "unread";
-    }
+    }        
 };
 
 function addBookToLibrary () {
@@ -33,6 +35,10 @@ function addBookToLibrary () {
     newBook = new Book();
     myLibrary.push(newBook);
     createBook();
+    // update read slider based on value
+    if (read.checked == true) {
+        checkReadBox(newBook);
+    }
 };
 
 function createBook () {
@@ -74,7 +80,6 @@ function createBook () {
     console.log(libDisplay);  
 
     deleteButtonFunc();
-
 }
 
 function deleteButtonFunc() {
@@ -105,13 +110,29 @@ function readSwitchFunc () {
     // function to remove prior event listeners
     function removeClick() {
         readSwitch.forEach(readSwitch => { 
-            readSwitch.removeEventListener("change",  changeFunc);  
+            readSwitch.removeEventListener("change", changeFunc);  
         })
     }
     // launch remove click
     closeButton.addEventListener("click", function () {
         removeClick();
     })
+}
+
+function checkReadBox () {
+
+    console.log("checkreadbox");
+
+    // need to add index to objects to iterate through
+
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].read === "read") {
+            readSwitch[i].checked = true;
+        }
+    }
+
+    // check mylibrary 
+
 }
 
 // form toggle controls
@@ -132,3 +153,9 @@ closeButton.addEventListener("click", function () {
 submitButton.addEventListener("click", function() {
     addBookToLibrary();
 })
+
+
+
+// need to add function that automaticaly sets the toggle button 
+// depending on whether or not its been read
+
