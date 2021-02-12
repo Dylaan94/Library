@@ -139,6 +139,11 @@ function checkReadBox () {
 
 function toggleForm() {
     document.getElementById("popupForm").classList.toggle("active");
+    // reset popup form values
+    bookTitle.value = "";
+    bookAuthor.value = "";
+    pageNum.value = "";
+
 }
 
 formButton.addEventListener("click", function() {
@@ -152,6 +157,7 @@ closeButton.addEventListener("click", function () {
 
 submitButton.addEventListener("click", function() {
     addBookToLibrary();
+    toggleForm();
 })
 
 

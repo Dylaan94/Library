@@ -1,21 +1,96 @@
-.container {
+body {
+    background-color: #ede0d4;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* reset styling */ 
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+  }
+
+.header {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    color: #3f4238;
+    font-size: 5vw;
+    padding: 2vw;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border: #222 solid 5px;
+    padding: 1vw;
+    background-color: #7f5539;
+    min-width: 80vw;
+    min-height: 70vh;
+}
+
+.contTitle {
+    color: white;
+    font-size: 5vw;
 }
 
 .libDisplay {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    background-color: white;
+    min-width: 78vw;
+    min-height: 50vh;
+    border-radius: 25px;
+    border: #222 solid 3px;
 }
 .book {
-    background-color: blue;
-    min-width: 150px;
-    min-height: 200px;
-    max-width: 150px;
-    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ede0d4;
+    width: 15vw;
+    height: 23vh;
+    border-radius: 25px;
+    margin: 1vw;
+    border: #222 solid 2px;
 }
 
+/* title */
+.book > h1 { 
+    
+}
+/* author */
+.book > h2 {
 
+}
+/* pages */
+.book > h3 {
+
+}
+/* read status */
+.book > h4 {
+
+}
+/* delete btn*/
+.book > .delete-btn {
+
+}
 /* form css */
 
 .popupForm .overlay {
@@ -42,6 +117,7 @@
     padding:20px;
     box-sizing:border-box;
     font-family:"Open Sans",sans-serif;
+    border-radius: 25px;
 }
 
 .popupForm .content .formInput {
@@ -76,19 +152,15 @@
 }
 
 .formButton {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    padding:15px;
-    font-size:18px;
-    border:2px solid #222;
-    color:#222;
-    text-transform:uppercase;
-    font-weight:600;
-    background:#fff;
+    padding: 2vh;
+    font-size: 2vw;
+    font-weight: 550;
+    border: #222 solid 2px;
+    border-radius: 5px;
+    color: #222;
+    background: #fff;
+    margin-top: 20px;
 }
-
 
 /* slider css */
 
