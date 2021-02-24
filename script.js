@@ -17,18 +17,38 @@ let read = document.getElementById("read");
 let index = 0;
 
 // constructor function
-function Book() {
-    this.title = bookTitle.value;
-    this.author = bookAuthor.value;
-    this.pageNum = pageNum.value
-    this.index = index++;
-    // change innerHTML to read status
-    if (read.checked === true) {
-        this.read = "read";
-    } else {
-        this.read = "unread";
-    }        
-};
+// leaving commented out for reference
+
+// function Book() {
+//     this.title = bookTitle.value;
+//     this.author = bookAuthor.value;
+//     this.pageNum = pageNum.value
+//     this.index = index++;
+//     // change innerHTML to read status
+//     if (read.checked === true) {
+//         this.read = "read";
+//     } else {
+//         this.read = "unread";
+//     }        
+// };
+
+
+// changed from constructor function to class constructor method
+
+class Book {
+    constructor() {
+        this.title = bookTitle.value;
+        this.author = bookAuthor.value;
+        this.pageNum = pageNum.value
+        this.index = index++;
+        // change innerHTML to read status
+        if (read.checked === true) {
+            this.read = "read";
+        } else {
+            this.read = "unread";
+        }    
+    }
+}
 
 function addBookToLibrary () {
     console.log("addBookToLibrary Launched")
