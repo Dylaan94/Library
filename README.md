@@ -1,4 +1,4 @@
-# library
+# Library
 Library Book Project for the Odin Project
 
 Things learnt <br>
