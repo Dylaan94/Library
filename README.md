@@ -8,6 +8,6 @@ Library Book Project for the Odin Project
 - How to use JS classes
 
 <b>Future updates</b> <br>
-Fix resizing issues<br>
-Add photos<br>
-Store on local or online server<br>
+- Fix resizing issues<br>
+- Add photos<br>
+- Store on local or online server<br>
